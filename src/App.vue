@@ -3,15 +3,19 @@
     <img src="./assets/logo.png">
     <h3 @click="show('姓名不能为空')">姓名不能为空</h3>
     <h3 @click="show('手机不能为空')">手机不能为空</h3>
+    <vue-slider v-model="sliderValue" tooltip="false"/>
   </div>
 </template>
 
 <script>
+import vueSlider from 'vue-slider-component'
 export default {
   name: 'app',
+  components: {vueSlider},
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      sliderValue: 10
     }
   },
   methods: {
