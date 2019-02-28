@@ -1,5 +1,5 @@
 <template>
-  <div class="red-pack-box" v-if="show">
+  <div class="red-pack-box" v-if="show" @click.self="show=false">
     <div class="red-pack"></div>
   </div>
 </template>
