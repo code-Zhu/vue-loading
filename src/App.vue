@@ -1,24 +1,29 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h3 @click="show('姓名不能为空')">姓名不能为空</h3>
-    <h3 @click="show('手机不能为空')">手机不能为空</h3>
+    <h1>1.message插件</h1>
+    <button @click="show('姓名不能为空')">姓名不能为空</button>
+    <button @click="show('手机不能为空')">手机不能为空</button>
+    <h1>2.音频插件</h1>
     <vue-slider v-model="musice.ctime" :max="this.musice.dtime" :min="0" tooltip="false"
       @drag-start="changeValue('start')" @drag-end="changeValue('end')"/>
     <span>当前值：{{musice.ctime | time}}</span>
     <audio ref="player" src="http://qtest.pstech360.com/test/static/1/test.mp3"></audio>
     <span>总值{{this.musice.dtime | time}}</span>
-    <p @click="play">开始</p>
-    <p @click="pause">暂停</p>
-    <p @click="redpack">redpack</p>
+    <button @click="play">开始</button>
+    <button @click="pause">暂停</button>
+    <h1>3.dialog</h1>
+    <button @click="redpack">redpack</button>
+    <h1>4.纯css的斜条纹</h1>
+    <twill/>
   </div>
 </template>
 
 <script>
 import vueSlider from 'vue-slider-component'
+import twill from './components/twill/index'
 export default {
   name: 'app',
-  components: {vueSlider},
+  components: {vueSlider, twill},
   data () {
     return {
       audio: null,
@@ -85,7 +90,9 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-
+h1{
+  text-align: left;
+}
 h1, h2 {
   font-weight: normal;
 }
